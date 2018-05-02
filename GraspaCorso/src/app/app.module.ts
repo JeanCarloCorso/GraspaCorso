@@ -7,9 +7,12 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+
 import { PedidoPage } from '../pages/pedido/pedido';
 import { ProdutoPage } from '../pages/produto/produto';
 import { CarrinhoPage } from '../pages/carrinho/carrinho';
+import { LoginPage } from '../pages/login/login';
+import { CadastroUserPage } from '../pages/cadastro-user/cadastro-user';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,9 +25,12 @@ import { SQLite } from '@ionic-native/sqlite';
     ContactPage,
     HomePage,
     TabsPage,
+
     PedidoPage,
     ProdutoPage,
     CarrinhoPage
+    LoginPage,
+    CadastroUserPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,9 @@ import { SQLite } from '@ionic-native/sqlite';
     TabsPage,
     PedidoPage,
     ProdutoPage,
-    CarrinhoPage
+    CarrinhoPage,
+    LoginPage,
+    CadastroUserPage
   ],
   providers: [
     StatusBar,
