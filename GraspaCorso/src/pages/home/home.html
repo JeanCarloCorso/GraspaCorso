@@ -1,17 +1,56 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+      <ion-buttons start>
+          <button ion-button>
+            <ion-icon name="contact"></ion-icon>
+          </button>
+        </ion-buttons>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-buttons end>
+            <button ion-button (click)="cart()">
+                <ion-icon ios="ios-cart" md="md-cart" ></ion-icon>
+            </button>
+      </ion-buttons>
+    <ion-title>GraspaCorso</ion-title>
+    
+    
   </ion-navbar>
+
+  
+
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+<ion-list>
+
+  <ion-item>
+    <ion-thumbnail item-start>
+      <img src="assets/imgs/graspa.jpg">
+    </ion-thumbnail>
+    <h2>Graspa Tradicional</h2>
+    <p>R$ 15,00</p>
+    <button ion-button clear item-end (click)="pageProduto('Graspa Tradicional', '15', 'caminho_da_foto')">View</button>
+  </ion-item>
+
+  <ion-item>
+    <ion-thumbnail item-start>
+      <img src="assets/imgs/graspa.jpg">
+    </ion-thumbnail>
+    <h2>Graspa Doce</h2>
+    <p>R$ 20,00</p>
+    <button ion-button clear item-end (click)="pageProduto('Graspa Doce', '20', 'caminho_da_foto')">View</button>
+  </ion-item>
+
+  <ion-item>
+    <ion-thumbnail item-start>
+      <img src="assets/imgs/graspa.jpg">
+    </ion-thumbnail>
+    <h2>Líquor</h2>
+    <p>R$ 30,00</p>
+    <button ion-button clear item-end (click)="pageProduto('Líquor', '30', 'caminho_da_foto')">View</button>
+  </ion-item>
+
+</ion-list>
 </ion-content>

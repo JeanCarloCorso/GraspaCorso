@@ -1,1 +1,12 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="mycontent">
+    <ion-content>
+      <ion-list>
+        <ion-item menuClose detail-none>Sair Menu</ion-item>
+        <ion-item (click)="nextPage()" menuClose detail-none>Pedidos</ion-item>
+        <ion-item (click)="backPage()" menuClose detail-none>Home</ion-item>
+        <ion-item menuClose detail-none>Deslogar</ion-item>
+      </ion-list>
+    </ion-content>
+</ion-menu>
+      
+<ion-nav #mycontent [root]="rootPage"></ion-nav>
