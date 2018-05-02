@@ -7,9 +7,13 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { PedidoPage } from '../pages/pedido/pedido';
+import { ProdutoPage } from '../pages/produto/produto';
+import { CarrinhoPage } from '../pages/carrinho/carrinho';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    PedidoPage,
+    ProdutoPage,
+    CarrinhoPage
   ],
   imports: [
     BrowserModule,
@@ -29,11 +36,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    PedidoPage,
+    ProdutoPage,
+    CarrinhoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    SQLite, 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
