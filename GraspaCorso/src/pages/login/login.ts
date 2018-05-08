@@ -16,12 +16,16 @@ import {CadastroUserPage} from '../cadastro-user/cadastro-user';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+
+  //rootPage: any = LoginPage;
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   home(){
-    this.navCtrl.push(HomePage);
+    //this.navCtrl.push(HomePage);
+    //this.rootPage = HomePage;
+    this.navCtrl.setRoot(HomePage);
   }
 
   cadastrouser(){
