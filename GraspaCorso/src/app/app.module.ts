@@ -16,7 +16,7 @@ import { CadastroUserPage } from '../pages/cadastro-user/cadastro-user';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { SQLite } from '@ionic-native/sqlite';
+//import { SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { SQLite } from '@ionic-native/sqlite';
 
     PedidoPage,
     ProdutoPage,
-    CarrinhoPage
+    CarrinhoPage,
     LoginPage,
     CadastroUserPage
   ],
@@ -52,7 +52,7 @@ import { SQLite } from '@ionic-native/sqlite';
   providers: [
     StatusBar,
     SplashScreen,
-    SQLite, 
+    //SQLite, 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
