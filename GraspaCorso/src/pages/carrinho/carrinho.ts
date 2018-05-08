@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+//import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
 
 /**
@@ -18,7 +18,7 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 })
 export class CarrinhoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public sqlite: SQLite) {
+  constructor(public navCtrl: NavController, public navParams: NavParams){//, public sqlite: SQLite) {
   }
 
   ionViewDidLoad() {
