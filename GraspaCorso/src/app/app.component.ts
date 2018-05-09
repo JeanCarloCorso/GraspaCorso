@@ -45,4 +45,8 @@ export class MyApp {
   cart(){
     this.navCtrl.push(CarrinhoPage);
   }
+
+  login(){
+    this.rootPage = LoginPage;
+  }
 }
