@@ -4,6 +4,8 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\ProdutoCollection;
+use App\Produto;
 
 class ProdutoController extends Controller
 {
@@ -14,7 +16,7 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        //
+        return new ProdutoCollection(Produto::all());
     }
 
     /**
@@ -25,7 +27,14 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $p = new User;
+        $p->name = $request->input('nome');
+        $p->preco = $request->input('preco');
+        $p->qtd_estoque = $request->input('qtd_estoque');
+        $p->descricao = $request->input('descricao');
+        $p->foto = $request->input('foto');
+        $p->save();
+        return ($p);
     }
 
     /**
