@@ -22,9 +22,10 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  home(){
+  home(nome, senha){
     //this.navCtrl.push(HomePage);
     //this.rootPage = HomePage;
+    
     this.navCtrl.setRoot(HomePage);
   }
 

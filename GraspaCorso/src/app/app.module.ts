@@ -16,6 +16,7 @@ import { CadastroUserPage } from '../pages/cadastro-user/cadastro-user';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { UsersProvider } from '../providers/users/users';
 //import { SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
@@ -53,7 +54,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     //SQLite, 
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    UsersProvider
   ]
 })
 export class AppModule {}
