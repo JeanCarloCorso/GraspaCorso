@@ -16,6 +16,7 @@ class ProdutoController extends Controller
      */
     public function index()
     {
+        header("Access-Control-Allow-Origin: *");
         return new ProdutoCollection(Produto::all());
     }
 

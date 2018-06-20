@@ -17,6 +17,10 @@ import { CadastroUserPage } from '../pages/cadastro-user/cadastro-user';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UsersProvider } from '../providers/users/users';
+import { ProdutosProvider } from '../providers/produtos/produtos';
+
+//import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http'; 
 //import { SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
@@ -32,9 +36,11 @@ import { UsersProvider } from '../providers/users/users';
     CarrinhoPage,
     LoginPage,
     CadastroUserPage
+    
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -55,7 +61,8 @@ import { UsersProvider } from '../providers/users/users';
     SplashScreen,
     //SQLite, 
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    UsersProvider
+    UsersProvider,
+    ProdutosProvider
   ]
 })
 export class AppModule {}
