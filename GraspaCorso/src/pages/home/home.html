@@ -25,31 +25,13 @@
 <ion-content>
 <ion-list>
 
-  <ion-item>
+  <ion-item *ngFor="let produto of produtos">
     <ion-thumbnail item-start>
-      <img src="assets/imgs/graspa.jpg">
+      <img src="http://127.0.0.1:8000{{produto.foto}}">
     </ion-thumbnail>
-    <h2>Graspa Tradicional</h2>
-    <p>R$ 15,00</p>
+    <h2>{{ produto.name }}</h2>
+    <p>R$: {{ produto.preco }}</p>
     <button ion-button clear item-end (click)="pageProduto('Graspa Tradicional', '15', 'caminho_da_foto')">View</button>
-  </ion-item>
-
-  <ion-item>
-    <ion-thumbnail item-start>
-      <img src="assets/imgs/graspa.jpg">
-    </ion-thumbnail>
-    <h2>Graspa Doce</h2>
-    <p>R$ 20,00</p>
-    <button ion-button clear item-end (click)="pageProduto('Graspa Doce', '20', 'caminho_da_foto')">View</button>
-  </ion-item>
-
-  <ion-item>
-    <ion-thumbnail item-start>
-      <img src="assets/imgs/graspa.jpg">
-    </ion-thumbnail>
-    <h2>Líquor</h2>
-    <p>R$ 30,00</p>
-    <button ion-button clear item-end (click)="pageProduto('Líquor', '30', 'caminho_da_foto')">View</button>
   </ion-item>
 
 </ion-list>

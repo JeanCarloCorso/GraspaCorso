@@ -19,9 +19,7 @@ export class ProdutosProvider {
   }
 
   getRemoteData(){
-    this.http.get('http://127.0.0.1:8000/api/produto').subscribe(data => {
-      console.log('my data: ', data);
-    })   
+    return this.http.get('http://127.0.0.1:8000/api/produto');
   }
 
 }

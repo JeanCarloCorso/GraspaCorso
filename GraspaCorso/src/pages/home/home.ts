@@ -22,6 +22,7 @@ export class HomePage {
       console.log('my data: ', data);
     })
   }*/
+  produtos: any[]=[];
 
   constructor(public navCtrl: NavController, public httpClient: HttpClient, public produtoProvider:ProdutosProvider) {
     
@@ -40,7 +41,15 @@ export class HomePage {
   }
 
   ionViewDidLoad(){
-    this.produtoProvider.getRemoteData();
+    this.produtoProvider.getRemoteData().subscribe(
+      (data)=>{
+        this.produtos = data['data'];
+        console.log(this.produtos = data['data']);
+      },
+      (error)=>{
+        console.error(error);
+      }
+    );
   }
 
 }
