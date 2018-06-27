@@ -9,6 +9,10 @@ use App\Produto;
 
 class ProdutoController extends Controller
 {
+    // _construct (){
+    //     header("Access-Control-Allow-Origin: *");
+    // }
+
     /**
      * Display a listing of the resource.
      *
@@ -46,7 +50,8 @@ class ProdutoController extends Controller
      */
     public function show($id)
     {
-        //
+        header("Access-Control-Allow-Origin: *");
+        return Produto::find($id);
     }
 
     /**

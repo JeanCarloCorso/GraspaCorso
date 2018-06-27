@@ -16,5 +16,15 @@ Route::get('/', function () {
 });
 */
 
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+
+Route::apiResources([
+    'user'=>'API\UserController',
+    'produto'=> 'API\ProdutoController'
+]);*/
+
 
 
