@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Observable } from 'rxjs/Observable';
 import { CarrinhoPage } from '../carrinho/carrinho';
+
+import { ProdutosProvider } from '../../providers/produtos/produtos';
 
 /**
  * Generated class for the ProdutoPage page.
@@ -20,19 +22,29 @@ export class ProdutoPage {
   nome:any;
   preco:any;
   foto:any;
+  id:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.nome = this.navParams.get('nome');
-    this.preco = this.navParams.get('preco');
-    this.foto = this.navParams.get('foto');
+  constructor(public navCtrl: NavController, public navParams: NavParams, public produtoProvider:ProdutosProvider) {
   }
 
   adicionarCarrinho(){
     
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProdutoPage');
+  ionViewDidLoad(){
+    this.produtoProvider.getDadosProduto(this.id).subscribe(
+      
+      (data)=>{
+        console.log(data['data']);
+        this.nome = data['data.id'];
+        this.preco = data['data.preco'];
+        this.foto = data['data.foto'];
+        console.log("----------909090909------------==================************");
+      },
+      (error)=>{
+        console.error(error);
+      }
+    );
   }
 
   cart(){

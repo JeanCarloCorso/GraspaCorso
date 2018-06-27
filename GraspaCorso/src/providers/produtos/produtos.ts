@@ -22,4 +22,8 @@ export class ProdutosProvider {
     return this.http.get('http://127.0.0.1:8000/api/produto');
   }
 
+  getDadosProduto(id: string){
+    return this.http.get('http://127.0.0.1:8000/api/produto/${id}');
+  }
+
 }

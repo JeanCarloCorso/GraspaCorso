@@ -24,6 +24,11 @@ export class HomePage {
   }*/
   produtos: any[]=[];
 
+  nome:any;
+  preco:any;
+  foto:any;
+  id:any;
+
   constructor(public navCtrl: NavController, public httpClient: HttpClient, public produtoProvider:ProdutosProvider) {
     
   }
@@ -32,8 +37,8 @@ export class HomePage {
     console.log("Selected Item", item);
   }
 
-  pageProduto(nome: string, preco: string, foto: string){  
-    this.navCtrl.push(ProdutoPage, {'nome': nome, 'preco': preco, 'foto': foto});
+  pageProduto(id: string){ 
+    this.navCtrl.push(ProdutoPage, {'nome': this.nome, 'preco': this.preco, 'foto': this.foto, 'id': this.id});
   }
 
   cart(){
