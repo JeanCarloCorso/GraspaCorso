@@ -21,7 +21,8 @@ import { ProdutosProvider } from '../providers/produtos/produtos';
 
 //import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http'; 
-//import { SQLite } from '@ionic-native/sqlite';
+import { SQLite } from '@ionic-native/sqlite';
+import { DatabaseProvider } from '../providers/database/database';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,6 @@ import { HttpClientModule } from '@angular/common/http';
     ContactPage,
     HomePage,
     TabsPage,
-
     PedidoPage,
     ProdutoPage,
     CarrinhoPage,
@@ -54,7 +54,7 @@ import { HttpClientModule } from '@angular/common/http';
     ProdutoPage,
     CarrinhoPage,
     LoginPage,
-    CadastroUserPage
+    CadastroUserPage,
   ],
   providers: [
     StatusBar,
@@ -62,7 +62,9 @@ import { HttpClientModule } from '@angular/common/http';
     //SQLite, 
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UsersProvider,
-    ProdutosProvider
+    ProdutosProvider,
+    SQLite,
+    DatabaseProvider,
   ]
 })
 export class AppModule {}

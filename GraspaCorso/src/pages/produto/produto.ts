@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { CarrinhoPage } from '../carrinho/carrinho';
 
 import { ProdutosProvider } from '../../providers/produtos/produtos';
+import { DatabaseProvider } from '../../providers/database/database';
 
 /**
  * Generated class for the ProdutoPage page.
@@ -23,28 +24,26 @@ export class ProdutoPage {
   preco:any;
   foto:any;
   id:any;
+  qtd:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public produtoProvider:ProdutosProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public produtoProvider:ProdutosProvider, public databaseProvider:DatabaseProvider) {
+    this.id = this.navParams.get('id');
   }
 
-  adicionarCarrinho(){
-    
+  adicionarCarrinho(qtd){
+    this.databaseProvider.adicionarCarrinho(this.id, this.qtd, this.nome, this.preco, this.foto);
   }
 
   ionViewDidLoad(){
-    this.produtoProvider.getDadosProduto(this.id).subscribe(
-      
-      (data)=>{
-        console.log(data['data']);
-        this.nome = data['data.id'];
-        this.preco = data['data.preco'];
-        this.foto = data['data.foto'];
-        console.log("----------909090909------------==================************");
-      },
-      (error)=>{
-        console.error(error);
-      }
-    );
+    console.log(this.id);
+    this.produtoProvider.getDadosProduto(this.id).subscribe(data => {
+      this.id = data['id'];
+      this.nome = data['name'];
+      this.preco = data['preco'];
+      this.foto = data['foto'];
+      //this.nome = data['data'].name;
+      console.log(data['name']);
+    });
   }
 
   cart(){
