@@ -1,17 +1,40 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+      <ion-buttons start>
+          <button ion-button>
+            <ion-icon name="contact"></ion-icon>
+          </button>
+        </ion-buttons>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-buttons end>
+            <button ion-button (click)="cart()">
+                <ion-icon ios="ios-cart" md="md-cart" ></ion-icon>
+            </button>
+      </ion-buttons>
+    <ion-title>GraspaCorso</ion-title>
+    
+    
   </ion-navbar>
+
+  
+
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+<ion-list>
+  
+  <ion-item *ngFor="let produto of produtos">
+      <ion-thumbnail item-start>
+        <img src="http://127.0.0.1:8000{{produto.foto}}">
+      </ion-thumbnail>
+      <h2>{{ produto.name }}</h2>
+      <p>R$: {{ produto.preco }}</p>
+      <!-- <ion-input type="number" style="display: none;" required [(ngModel)]="produto.id" ngControl="title" [ngModelOptions]="{standalone: true}"></ion-input> -->
+      
+      <button ion-button clear item-end (click)="pageProduto(produto.id)">View</button>
+  </ion-item>
+
+</ion-list>
 </ion-content>
