@@ -23,6 +23,7 @@ import { ProdutosProvider } from '../providers/produtos/produtos';
 import { HttpClientModule } from '@angular/common/http'; 
 import { SQLite } from '@ionic-native/sqlite';
 import { DatabaseProvider } from '../providers/database/database';
+import { CarrinhosProvider } from '../providers/carrinhos/carrinhos';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { DatabaseProvider } from '../providers/database/database';
     ProdutosProvider,
     SQLite,
     DatabaseProvider,
+    CarrinhosProvider,
   ]
 })
 export class AppModule {}
